@@ -411,7 +411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c438c93eab0c4d1fadbc66bf50c2f881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Environment.VerticalParallax
-  speed: 2
+  speed: -2
   height: 20
 --- !u!1 &395306753
 GameObject:
@@ -747,7 +747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c438c93eab0c4d1fadbc66bf50c2f881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Environment.VerticalParallax
-  speed: 3
+  speed: -3
   height: 20
 --- !u!1 &618993683
 GameObject:
@@ -853,7 +853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c438c93eab0c4d1fadbc66bf50c2f881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Environment.VerticalParallax
-  speed: 4
+  speed: -4
   height: 20
 --- !u!1 &619394800
 GameObject:
@@ -1229,7 +1229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c438c93eab0c4d1fadbc66bf50c2f881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Environment.VerticalParallax
-  speed: 5
+  speed: -5
   height: 30
 --- !u!1 &2047514979
 GameObject:

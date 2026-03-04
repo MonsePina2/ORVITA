@@ -1402,7 +1402,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 2
   m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -1428,6 +1428,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5edbecf7643a41eeb369b0dc5e0ca16e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerControler
+  speed: 13
+  rb: {fileID: 1938521318}
 --- !u!114 &1938521320
 MonoBehaviour:
   m_ObjectHideFlags: 0

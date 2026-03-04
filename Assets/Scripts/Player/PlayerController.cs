@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 namespace Player
 {
-    public class PlayerControler : MonoBehaviour
+    public class PlayerController : MonoBehaviour
     {
         [SerializeField] private float speed;
 

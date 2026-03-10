@@ -15,13 +15,7 @@ namespace Asteroids
             _rb = GetComponent<Rigidbody2D>();
         }
 
-        private void Start() {
-            var target=FindFirstObjectByType<PlayerController>();
-            var position=target.transform.position;
-            Launch(position);
-        }
-
-        private void Launch(Vector2 target) {
+        public void Launch(Vector2 target) {
             var currentPosition = _rb.position;
             var positionDelta   = target - currentPosition;
             var direction=positionDelta.normalized;

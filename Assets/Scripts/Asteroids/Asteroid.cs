@@ -1,13 +1,14 @@
 using UnityEngine;
 using Player;
+using UnityEngine.WSA;
 
 namespace Asteroids
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public class Asteroid : MonoBehaviour
     {
+        [Range(.5f,50)]
         [SerializeField] private float speed;
-
         private Rigidbody2D _rb;
 
         private void Awake() {
@@ -15,20 +16,17 @@ namespace Asteroids
         }
 
         private void Start() {
-            var target    = FindFirstObjectByType<PlayerController>();
-            var direction = GetTargetDirection(target);
-            Launch(direction);
+            var target=FindFirstObjectByType<PlayerController>();
+            var position=target.transform.position;
+            Launch(position);
         }
 
-        private Vector2 GetTargetDirection(PlayerController target) {
-            var targetPos = target.transform.position;
-            var delta     = targetPos-transform.position;
-            var direction =delta.normalized;
-
-            return direction;
-        }
-        private void Launch(Vector2 direction) {
-            _rb.AddForce(direction*speed,ForceMode2D.Impulse);
+        private void Launch(Vector2 target) {
+            var currentPosition = _rb.position;
+            var positionDelta   = target - currentPosition;
+            var direction=positionDelta.normalized;
+            var velocity= direction*speed;
+            _rb.linearVelocity = velocity;
         }
     }
 }

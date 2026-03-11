@@ -196,7 +196,8 @@ MonoBehaviour:
   - {fileID: 124202928}
   - {fileID: 1816247395}
   - {fileID: 1989168871}
-  spawnInterval: 0
+  spawnInterval: 6
+  _spawnTimer: 0
 --- !u!4 &107494525
 Transform:
   m_ObjectHideFlags: 0

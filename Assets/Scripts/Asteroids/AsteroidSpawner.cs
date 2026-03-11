@@ -16,17 +16,41 @@ namespace Asteroids
         [SerializeField]
         private float spawnInterval;
 
+        [SerializeField]private float _spawnTimer;
+
         private void Start() {
-            var spawnPointIdx=Random.Range(0,spawnPoints.Length);
-            var spawnPoint = spawnPoints[spawnPointIdx];
-            var spawnPosition= spawnPoint.position;
+            _spawnTimer = 0;
 
-           var asteroid= Instantiate(asteroidPrefab,spawnPosition,Quaternion.identity);
-
-           var targetIdx=Random.Range(0,targets.Length);
-           var target = targets[targetIdx];
-           var targetPosition = target.position;
-           asteroid.Launch(targetPosition);
         }
+
+        private void Update() {
+            _spawnTimer += Time.deltaTime;
+
+            if (_spawnTimer < spawnInterval) return;
+
+            SpawnAsteroid();
+            _spawnTimer = 0;
+        }
+
+        private Vector3 GetSpawnPosition() {
+            var spawnPointIdx =Random.Range(0,spawnPoints.Length);
+            var spawnPoint    = spawnPoints[spawnPointIdx];
+            return spawnPoint.position;
+        }
+
+        private Vector2 GetTargetPosition() {
+            var targetIdx      =Random.Range(0,targets.Length);
+            var target         = targets[targetIdx];
+            return target.position;
+        }
+
+        private void SpawnAsteroid() {
+            var spawnPosition=GetSpawnPosition();
+            var targetPosition = GetTargetPosition();
+
+            var asteroid= Instantiate(asteroidPrefab,spawnPosition,Quaternion.identity);
+            asteroid.Launch(targetPosition);
+        }
+
     }
 }

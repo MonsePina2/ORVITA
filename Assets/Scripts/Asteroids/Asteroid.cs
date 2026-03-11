@@ -22,5 +22,12 @@ namespace Asteroids
             var velocity= direction*speed;
             _rb.linearVelocity = velocity;
         }
+
+        private void OnTriggerEnter2D(Collider2D other) {
+            Debug.Log("Triggered with" + other.name);
+        }
+        private void OnTriggerEnter2D(Collision2D other) {
+            Debug.Log("Collided with"+other.gameObject.name);
+        }
     }
 }

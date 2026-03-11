@@ -24,10 +24,11 @@ namespace Asteroids
         }
 
         private void OnTriggerEnter2D(Collider2D other) {
-            Debug.Log("Triggered with" + other.name);
-        }
-        private void OnTriggerEnter2D(Collision2D other) {
-            Debug.Log("Collided with"+other.gameObject.name);
+            if (other.CompareTag("Asteroid Wall"))
+            {
+                Destroy(gameObject);
+            }
+
         }
     }
 }

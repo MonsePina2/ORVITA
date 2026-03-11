@@ -11,6 +11,11 @@ TagManager:
   - 
   - Water
   - UI
+  - Walls
+  - 
+  - 
+  - 
+  - Asteroids
   - 
   - 
   - 
@@ -20,12 +25,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
   - 
   - 
   - 

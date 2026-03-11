@@ -5,7 +5,7 @@ namespace Asteroids
     public class AsteroidSpawner : MonoBehaviour
     {
         [SerializeField]
-        private Asteroid asteroidPrefab;
+        private Asteroid [] asteroidPrefabs;
 
         [SerializeField]
         private Transform[] spawnPoints;
@@ -44,9 +44,16 @@ namespace Asteroids
             return target.position;
         }
 
+        private Asteroid GetRandomAsteroid() {
+            var prefabIdx=Random.Range(0,asteroidPrefabs.Length);
+            var prefab=asteroidPrefabs[prefabIdx];
+            return prefab;
+        }
+
         private void SpawnAsteroid() {
             var spawnPosition=GetSpawnPosition();
             var targetPosition = GetTargetPosition();
+            var asteroidPrefab=GetRandomAsteroid();
 
             var asteroid= Instantiate(asteroidPrefab,spawnPosition,Quaternion.identity);
             asteroid.Launch(targetPosition);

@@ -179,7 +179,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ea78afd97894cb7bfc185121338f6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroids.AsteroidSpawner
-  asteroidPrefab: {fileID: 733168830126401007, guid: 2cd07ce235fbbad4eba0b70ac1ff02ba, type: 3}
+  asteroidPrefabs:
+  - {fileID: 4239378412564340446, guid: 0069a7840f6c3f447ac2e0fa13186d5a, type: 3}
+  - {fileID: 8392556006288893908, guid: 46ac405bb3772374db8a10f704837208, type: 3}
+  - {fileID: 6940436411813271589, guid: 796d2c0a5bd59414aa229b761508d994, type: 3}
+  - {fileID: 5115704875720829015, guid: c60ee07c3efff58408707e624c2937c3, type: 3}
+  - {fileID: 5092234109704293736, guid: af644ab69ca76f34b96d6086a3825a3c, type: 3}
   spawnPoints:
   - {fileID: 1082378685}
   - {fileID: 1327599749}
@@ -196,7 +201,7 @@ MonoBehaviour:
   - {fileID: 124202928}
   - {fileID: 1816247395}
   - {fileID: 1989168871}
-  spawnInterval: 6
+  spawnInterval: 4
   _spawnTimer: 0
 --- !u!4 &107494525
 Transform:

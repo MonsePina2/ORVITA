@@ -1,3 +1,4 @@
+using Asteroids;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,6 +21,22 @@ namespace Player
             var value     = ctx.ReadValue<Vector2>();
             _inputDirection = new Vector3(value.x, value.y, 0);
 
+        }
+
+        private void OnTriggerEnter2D(Collider2D other) {
+
+
+            var asteroid = other.GetComponentInParent<Asteroid>();
+            if (asteroid != null)
+            {
+                Destroy(gameObject);
+            }
+
+            //var objectParent=other.transform.root.parent;
+            //if (objectParent.CompareTag("Asteroid"))
+            //{
+            //    Destroy(gameObject);
+            //}
         }
     }
 }

@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Asteroid Wall
+  - Asteroid
   layers:
   - Default
   - TransparentFX

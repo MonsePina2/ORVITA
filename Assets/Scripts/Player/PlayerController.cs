@@ -1,4 +1,5 @@
 using Asteroids;
+using Managers;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -29,10 +30,11 @@ namespace Player
             var asteroid = other.GetComponentInParent<Asteroid>();
             if (asteroid != null)
             {
+                GameManager.Instance.GameOver();
                 Destroy(gameObject);
             }
 
-            //var objectParent=other.transform.root.parent;
+            //var objectParent=other.transform.root;
             //if (objectParent.CompareTag("Asteroid"))
             //{
             //    Destroy(gameObject);

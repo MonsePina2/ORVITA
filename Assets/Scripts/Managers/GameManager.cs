@@ -18,8 +18,12 @@ namespace Managers
         [SerializeField]private UiManager uiManager;
 
         private float _gameTime;
-
         private GameState _currentState;
+
+        public bool IsMainMenu => _currentState == GameState.MAIN_MENU;
+        public bool IsInGame => _currentState == GameState.IN_GAME;
+        public bool IsGameOver => _currentState == GameState.GAME_OVER;
+
         private void Awake() {
             if (Instance != null && Instance != this)
             {
@@ -32,7 +36,7 @@ namespace Managers
         }
 
         private void Update() {
-            if (_currentState != GameState.IN_GAME)return;
+            if (!IsInGame)return;
 
              _gameTime += Time.deltaTime;
              uiManager.UpdateScore(_gameTime);

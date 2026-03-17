@@ -1,3 +1,4 @@
+using Managers;
 using UnityEngine;
 
 namespace Asteroids
@@ -16,7 +17,7 @@ namespace Asteroids
         [SerializeField]
         private float spawnInterval;
 
-        [SerializeField]private float _spawnTimer;
+        private float _spawnTimer;
 
         private void Start() {
             _spawnTimer = 0;
@@ -24,6 +25,8 @@ namespace Asteroids
         }
 
         private void Update() {
+            if (!GameManager.Instance.IsInGame) return;
+
             _spawnTimer += Time.deltaTime;
 
             if (_spawnTimer < spawnInterval) return;

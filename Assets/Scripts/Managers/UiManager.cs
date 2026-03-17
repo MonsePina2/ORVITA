@@ -7,7 +7,7 @@ namespace Managers
         [SerializeField] private TMP_Text gameScoreText;
 
         public void UpdateScore(float score) {
-            gameScoreText.text = $"Score {score}";
+            gameScoreText.text = $" {score:f2}s";
         }
 
     }

@@ -15,6 +15,7 @@ namespace Managers
 
         public static GameManager Instance;
 
+        [SerializeField]private UiManager uiManager;
 
         private float _gameTime;
 
@@ -34,8 +35,9 @@ namespace Managers
             if (_currentState != GameState.IN_GAME)return;
 
              _gameTime += Time.deltaTime;
+             uiManager.UpdateScore(_gameTime);
 
-             Debug.Log($"Game Time:{_gameTime}");
+
 
         }
 

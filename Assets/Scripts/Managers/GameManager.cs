@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Managers
 {
@@ -31,7 +32,22 @@ namespace Managers
                return;
             }
             Instance = this;
-            _gameTime = 0;
+
+        }
+
+        private void Start() {
+            _currentState = GameState.MAIN_MENU;
+            uiManager.ShowMainMenuUI();
+        }
+
+        public void MainMenu() {
+            var currentScene=SceneManager.GetActiveScene();
+            var currentSceneIdx=currentScene.buildIndex;
+            SceneManager.LoadScene(currentSceneIdx);
+        }
+
+        public void StartGame() {
+            _gameTime     = 0;
             _currentState = GameState.IN_GAME;
             uiManager.ShowGameUI();
         }
@@ -48,7 +64,7 @@ namespace Managers
 
         public void GameOver() {
             _currentState = GameState.GAME_OVER;
-            Debug.Log("Game Over!");
+            uiManager.ShowGameOverUI();
         }
     }
 }

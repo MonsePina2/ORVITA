@@ -15,7 +15,7 @@ namespace Managers
             gameScoreText.text = $" {score:f2}s";
         }
 
-        public void ShowMainMenu() {
+        public void ShowMainMenuUI() {
             mainMenuUI.SetActive(true);
             gameUI.SetActive(false);
             gameOverUI.SetActive(false);
@@ -27,7 +27,7 @@ namespace Managers
             gameOverUI.SetActive(false);
         }
 
-        public void ShowGameOver() {
+        public void ShowGameOverUI() {
             mainMenuUI.SetActive(false);
             gameUI.SetActive(false);
             gameOverUI.SetActive(true);

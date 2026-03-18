@@ -15,7 +15,7 @@ namespace Managers
 
         public static GameManager Instance;
 
-        [SerializeField]private UiManager uiManager;
+        [SerializeField]private UIManager uiManager;
 
         private float _gameTime;
         private GameState _currentState;
@@ -33,6 +33,7 @@ namespace Managers
             Instance = this;
             _gameTime = 0;
             _currentState = GameState.IN_GAME;
+            uiManager.ShowGameUI();
         }
 
         private void Update() {

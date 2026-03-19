@@ -2260,7 +2260,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 623202370}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1323011255}
+        m_TargetAssemblyTypeName: Managers.GameManager, Assembly-CSharp
+        m_MethodName: ResetHighScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &623202370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4296,7 +4308,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1213735773}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1323011255}
+        m_TargetAssemblyTypeName: Managers.GameManager, Assembly-CSharp
+        m_MethodName: ResetHighScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1213735773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5146,9 +5170,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Managers.UiManager
   mainMenuUI: {fileID: 633079936}
+  mainMenuHighScoreText: {fileID: 1708578794}
   gameUI: {fileID: 580340313}
   gameScoreText: {fileID: 2053068734}
   gameOverUI: {fileID: 2061153651}
+  gameOverScoreText: {fileID: 234985464}
+  gameOverHighScoreText: {fileID: 1119895879}
 --- !u!1 &1578018579
 GameObject:
   m_ObjectHideFlags: 0

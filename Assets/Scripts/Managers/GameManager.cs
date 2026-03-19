@@ -6,6 +6,8 @@ namespace Managers
     public class GameManager : MonoBehaviour
     {
 
+        private const string HIGH_SCORE_KEY = "HighScore";
+
         private enum GameState
         {
             MAIN_MENU,
@@ -37,7 +39,13 @@ namespace Managers
 
         private void Start() {
             _currentState = GameState.MAIN_MENU;
+
+            var highScore = PlayerPrefs.GetFloat(HIGH_SCORE_KEY, 0);
+            uiManager.UpdateMainMenuHighScore(highScore);
             uiManager.ShowMainMenuUI();
+
+
+
         }
 
         public void MainMenu() {
@@ -64,7 +72,22 @@ namespace Managers
 
         public void GameOver() {
             _currentState = GameState.GAME_OVER;
+
+            var highScore = PlayerPrefs.GetFloat(HIGH_SCORE_KEY, 0);
+            if (_gameTime >= highScore)
+            {
+                PlayerPrefs.SetFloat(HIGH_SCORE_KEY, _gameTime);
+                highScore = _gameTime;
+            }
+
+            uiManager.UpdateGameOverScores(highScore,_gameTime);
             uiManager.ShowGameOverUI();
+        }
+
+        public void ResetHighScore() {
+            PlayerPrefs.DeleteKey(HIGH_SCORE_KEY);
+            uiManager.UpdateMainMenuHighScore(0);
+            uiManager.UpdateGameOverScores(0,_gameTime);
         }
 
         public void QuitGame() {

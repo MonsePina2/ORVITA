@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Asteroid Wall
   - Asteroid
+  - UI SFX Audio Source
   layers:
   - Default
   - TransparentFX

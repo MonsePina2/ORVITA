@@ -19,6 +19,7 @@ namespace Managers
         public static GameManager Instance;
 
         [SerializeField]private UIManager uiManager;
+        [SerializeField]private MusicManager musicManager;
 
         private float _gameTime;
         private GameState _currentState;
@@ -40,6 +41,7 @@ namespace Managers
         private void Start() {
             _currentState = GameState.MAIN_MENU;
 
+            musicManager.PlayMainMenuMusic();
             var highScore = PlayerPrefs.GetFloat(HIGH_SCORE_KEY, 0);
             uiManager.UpdateMainMenuHighScore(highScore);
             uiManager.ShowMainMenuUI();
@@ -55,6 +57,7 @@ namespace Managers
         }
 
         public void StartGame() {
+            musicManager.PlayGameMusic();
             _gameTime     = 0;
             _currentState = GameState.IN_GAME;
             uiManager.ShowGameUI();
@@ -72,6 +75,8 @@ namespace Managers
 
         public void GameOver() {
             _currentState = GameState.GAME_OVER;
+
+            musicManager.PlayGameOverMusic();
 
             var highScore = PlayerPrefs.GetFloat(HIGH_SCORE_KEY, 0);
             if (_gameTime >= highScore)

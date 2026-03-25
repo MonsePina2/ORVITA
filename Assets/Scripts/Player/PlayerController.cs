@@ -23,8 +23,17 @@ namespace Player
         public void OnMove(InputAction.CallbackContext ctx) {
             var value = ctx.ReadValue<Vector2>();
             _inputDirection = new Vector3(value.x, value.y, 0);
-            engineAudioSourse .Stop();
-            engineAudioSourse.Play();
+
+            if (_inputDirection == Vector3.zero)
+            {
+                engineAudioSourse .Stop();
+            }
+            else
+            {
+                engineAudioSourse.Play();
+            }
+
+
 
     }
 

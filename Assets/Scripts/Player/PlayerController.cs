@@ -13,6 +13,10 @@ namespace Player
 
         [SerializeField] private AudioSource engineAudioSourse;
 
+        [SerializeField] private GameObject deathParticlesPrefab;
+
+        [SerializeField] private Animator animator;
+
         private Vector3 _inputDirection;
 
         private void FixedUpdate() {
@@ -31,6 +35,8 @@ namespace Player
             else
             {
                 engineAudioSourse.Play();
+                animator.SetFloat("XDirection",_inputDirection.x);
+                animator.SetFloat("YDirection",_inputDirection.y);
             }
 
 
@@ -44,6 +50,7 @@ namespace Player
             if (asteroid != null)
             {
                 GameManager.Instance.GameOver();
+                Instantiate(deathParticlesPrefab,transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
 
